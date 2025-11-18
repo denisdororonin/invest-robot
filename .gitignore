@@ -8,6 +8,13 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+data/
+analytics/
+build/
+settings/params_*
+settings/order_*
+
+
 build/
 develop-eggs/
 dist/

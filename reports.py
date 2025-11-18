@@ -184,7 +184,7 @@ class SingleRunStrategyReport:
         for i in range(0, len(equities)):
             drawdowns[i] = (equities[i] - peaks[i])/peaks[i]
 
-        self.maxDD = min(drawdowns)
+        self.maxDD = abs(min(drawdowns))
         return
 
     def print_report(self):
