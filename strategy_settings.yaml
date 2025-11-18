@@ -1,0 +1,46 @@
+candles:
+    candles_enddate: 30-09-2025   # date in form of "30-09-2025" or "now"
+    candles_num: 3400
+    candles_int: 1hour
+    ticker: GAZP
+strategy:
+    strategy_name: strategy_MA_cross_sl
+    strategy_selection: Profit
+    backtest_percent: 0.3
+    trade_allowed: no
+    lots: 1
+    shorts_enabled: yes
+    #param name / min value / max value (please set max value + 1) / step 
+    params: [
+                [ma_fast, 10, 70, 2], 
+                [ma_slow, 20, 72, 2], 
+                [atr, 14, 15, 1], 
+                [sl, 22, 24, 2],
+            ]
+account:
+    acc_name: Experimental2
+finder:
+    day_len: 14
+    good_deviation: 0.1
+tester:
+    testmode: yes
+    simulation_start_date: 30-10-2024
+    start_capital: 125
+    day_start_utc: 7
+    day_end_utc:   15
+    spread: 0.03             #spread in % (e.g. 0.03%). If 0 or less than zero, then read from market
+    strategy_log: yes
+tuning:
+    stop_loss: -1          
+    take_prof: -1
+    trail_stops: no          #only works when stop_loss > 0
+    sl_tp_method: atr
+    skip_holidays: yes
+    skip_morning_hours: yes
+    skip_evening_hours: no
+    min_profit_ord_percent: 60
+    candlewaitclose: no
+    adjust_params: yes
+    adjust_period: 5         #days
+    use_precalculated_indicators: yes
+    close_shorts_on_day_end: no
